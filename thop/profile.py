@@ -209,7 +209,7 @@ def profile(
     model.apply(add_hooks)
 
     with torch.no_grad():
-        model(*inputs)
+        model(**inputs)
 
     def dfs_count(module: nn.Module, prefix="\t") -> (int, int):
         total_ops, total_params = module.total_ops.item(), 0
